@@ -1,9 +1,9 @@
 package de.heinerion.randomnamegenerator;
 
 public class NameGenerator {
-  private String[] maleForenames;
-  private String[] femaleForenames;
-  private String[] surnames;
+  private final String[] maleForenames;
+  private final String[] femaleForenames;
+  private final String[] surnames;
 
   private Gender gender = Gender.MALE;
   private int numberOfForenames = 0;
