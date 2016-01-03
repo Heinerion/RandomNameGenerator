@@ -9,7 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SwingNameGeneratorInterface extends JFrame implements NameGeneratorInterface {
-  private NameGenerator nameGenerator;
+  private final NameGenerator nameGenerator;
 
   public SwingNameGeneratorInterface() {
     nameGenerator = new NameGenerator();

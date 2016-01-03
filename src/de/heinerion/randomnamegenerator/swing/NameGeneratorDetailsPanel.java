@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class NameGeneratorDetailsPanel extends JPanel {
-  private NameGenerator nameGenerator;
+  private final NameGenerator nameGenerator;
 
   public NameGeneratorDetailsPanel(@NotNull NameGenerator nameGenerator) {
     this.nameGenerator = nameGenerator;
