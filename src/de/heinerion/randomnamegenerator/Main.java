@@ -1,6 +1,6 @@
 package de.heinerion.randomnamegenerator;
 
-import de.heinerion.randomnamegenerator.console.NameGeneratorUserInterface;
+import de.heinerion.randomnamegenerator.console.ConsoleInterface;
 import de.heinerion.randomnamegenerator.swing.SwingNameGeneratorInterface;
 
 public class Main {
@@ -43,7 +43,7 @@ public class Main {
   }
 
   private static void showConsoleInterface() throws Exception {
-    NameGeneratorUserInterface userInterface = new NameGeneratorUserInterface();
+    ConsoleInterface userInterface = new ConsoleInterface();
 
     userInterface.showInterface();
   }
