@@ -10,21 +10,9 @@ public class NameGenerator {
   private int numberOfSurnames = 0;
 
   public NameGenerator() {
-    setFemaleForenames(NameService.getFemaleForenames());
-    setMaleForenames(NameService.getMaleForenames());
-    setSurnames(NameService.getSurnames());
-  }
-
-  public void setFemaleForenames(String[] femaleForenames) {
-    this.femaleForenames = femaleForenames;
-  }
-
-  public void setMaleForenames(String[] maleForenames) {
-    this.maleForenames = maleForenames;
-  }
-
-  public void setSurnames(String[] surnames) {
-    this.surnames = surnames;
+    this.femaleForenames = NameService.getFemaleForenames();
+    this.maleForenames = NameService.getMaleForenames();
+    this.surnames = NameService.getSurnames();
   }
 
   public void setGender(Gender gender) {
