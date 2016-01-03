@@ -2,6 +2,7 @@ package de.heinerion.randomnamegenerator;
 
 import de.heinerion.randomnamegenerator.console.ConsoleInterface;
 import de.heinerion.randomnamegenerator.swing.SwingInterface;
+import org.jetbrains.annotations.NotNull;
 
 public class Main {
   public static void main(String[] args) {
@@ -11,32 +12,26 @@ public class Main {
       choice = args[0];
     }
 
+    NameGeneratorInterface userInterface = getNameGeneratorInterface(choice);
+
+    userInterface.showInterface();
+  }
+
+  @NotNull
+  private static NameGeneratorInterface getNameGeneratorInterface(String choice) {
+    NameGeneratorInterface userInterface;
+
     switch (choice) {
       case "swing":
-        launchSwingInterface();
+        userInterface = new SwingInterface();
         break;
       case "fx":
-        launchFxInterface();
-        break;
+        throw new HeinerionException("FX Interface not implemented");
       case "console":
       default:
-        launchConsoleInterface();
+        userInterface = new ConsoleInterface();
     }
-  }
 
-  private static void launchSwingInterface() {
-    SwingInterface swingInterface = new SwingInterface();
-
-    swingInterface.showInterface();
-  }
-
-  private static void launchFxInterface() {
-    throw new HeinerionException("FX Interface not implemented");
-  }
-
-  private static void launchConsoleInterface() {
-    ConsoleInterface consoleInterface = new ConsoleInterface();
-
-    consoleInterface.showInterface();
+    return userInterface;
   }
 }
