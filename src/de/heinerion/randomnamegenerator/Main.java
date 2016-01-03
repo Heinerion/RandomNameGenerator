@@ -1,7 +1,7 @@
 package de.heinerion.randomnamegenerator;
 
 import de.heinerion.randomnamegenerator.console.ConsoleInterface;
-import de.heinerion.randomnamegenerator.swing.SwingNameGeneratorInterface;
+import de.heinerion.randomnamegenerator.swing.SwingInterface;
 
 public class Main {
   public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Main {
   }
 
   private static void launchSwingInterface() {
-    SwingNameGeneratorInterface swingInterface = new SwingNameGeneratorInterface();
+    SwingInterface swingInterface = new SwingInterface();
 
     swingInterface.showInterface();
   }

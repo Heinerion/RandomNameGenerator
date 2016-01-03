@@ -8,10 +8,10 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 
-public class SwingNameGeneratorInterface extends JFrame implements NameGeneratorInterface {
+public class SwingInterface extends JFrame implements NameGeneratorInterface {
   private final NameGenerator nameGenerator;
 
-  public SwingNameGeneratorInterface() {
+  public SwingInterface() {
     nameGenerator = new NameGenerator();
     setLayout(new BorderLayout(10, 10));
   }
