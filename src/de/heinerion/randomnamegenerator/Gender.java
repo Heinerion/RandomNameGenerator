@@ -12,6 +12,6 @@ public enum Gender {
   }
 
   public String toString() {
-    return Translator.translate(this.name().toLowerCase());
+    return Translator.translate("gender." + this.name().toLowerCase());
   }
 }
