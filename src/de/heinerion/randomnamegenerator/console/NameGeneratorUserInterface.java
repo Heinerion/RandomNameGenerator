@@ -1,29 +1,35 @@
 package de.heinerion.randomnamegenerator.console;
 
-import de.heinerion.randomnamegenerator.Gender;
-import de.heinerion.randomnamegenerator.NameGenerator;
-import de.heinerion.randomnamegenerator.Translator;
+import de.heinerion.randomnamegenerator.*;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-public class NameGeneratorUserInterface {
+public class NameGeneratorUserInterface implements NameGeneratorInterface {
   private NameGenerator nameGenerator;
 
   /**
    * Zeigt ein Nutzerinterface auf der Kommandozeile.
-   *
-   * @throws Exception
    */
-  public void showInterface() throws Exception {
+  public void showInterface() {
     initializeNameGenerator();
+    interactWithUser();
+    showGeneratedName();
+  }
 
+  private void interactWithUser() {
+    try {
+      askForDetails();
+    } catch (Exception e) {
+      throw new HeinerionException(e);
+    }
+  }
+
+  private void askForDetails() throws Exception {
     askForGender();
     askForTheNumberOfForenames();
     askForTheNumberOfSurnames();
-
-    showGeneratedName();
   }
 
   private void initializeNameGenerator() {
