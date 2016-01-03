@@ -35,16 +35,8 @@ public class Main {
   }
 
   private static void launchConsoleInterface() {
-    try {
-      showConsoleInterface();
-    } catch (Exception e) {
-      throw new HeinerionException("Error in Console Interface", e);
-    }
-  }
+    ConsoleInterface consoleInterface = new ConsoleInterface();
 
-  private static void showConsoleInterface() throws Exception {
-    ConsoleInterface userInterface = new ConsoleInterface();
-
-    userInterface.showInterface();
+    consoleInterface.showInterface();
   }
 }
