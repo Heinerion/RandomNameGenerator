@@ -30,7 +30,8 @@ public class NameGenerator {
   public String generateRandomName() {
     String combinedForenames = createCombinedForenames();
     String combinedSurnames = createCombinedSurnames();
-    return combinedForenames + " " + combinedSurnames;
+    boolean needsDivider = !combinedForenames.isEmpty() && !combinedSurnames.isEmpty();
+    return combinedForenames + (needsDivider ? " " : "") + combinedSurnames;
   }
 
   private String createCombinedForenames() {

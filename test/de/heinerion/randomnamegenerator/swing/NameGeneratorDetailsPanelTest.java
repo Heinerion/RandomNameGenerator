@@ -46,7 +46,6 @@ public class NameGeneratorDetailsPanelTest {
   public void testGenerateRandomNameWithoutAdjustments() throws Exception {
     String name = panel.generateRandomName();
 
-    // TODO refactor to get "" instead of " "
-    assertEquals(" ", name);
+    assertEquals("", name);
   }
 }
