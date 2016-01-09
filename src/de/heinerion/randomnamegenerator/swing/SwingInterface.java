@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SwingInterface extends JFrame implements NameGeneratorInterface {
+  private static final int SPACE = 5;
+
   private NameGeneratorDetailsPanel detailsPanel;
 
   public SwingInterface() {
@@ -49,16 +51,16 @@ public class SwingInterface extends JFrame implements NameGeneratorInterface {
   }
 
   private void addWhitespaceLeftAndRight() {
-    JPanel leftSpace = createSpacePanel(5, 5);
-    JPanel rightSpace = createSpacePanel(5, 5);
+    JPanel leftSpace = createSpacePanel();
+    JPanel rightSpace = createSpacePanel();
 
     add(leftSpace, BorderLayout.LINE_START);
     add(rightSpace, BorderLayout.LINE_END);
   }
 
-  private JPanel createSpacePanel(int width, int height) {
+  private JPanel createSpacePanel() {
     JPanel spacePanel = new JPanel();
-    spacePanel.setPreferredSize(new Dimension(width, height));
+    spacePanel.setPreferredSize(new Dimension(SPACE, SPACE));
 
     return spacePanel;
   }
