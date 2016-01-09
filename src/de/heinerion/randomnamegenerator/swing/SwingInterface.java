@@ -1,6 +1,5 @@
 package de.heinerion.randomnamegenerator.swing;
 
-import de.heinerion.randomnamegenerator.NameGenerator;
 import de.heinerion.randomnamegenerator.NameGeneratorInterface;
 import de.heinerion.randomnamegenerator.Translator;
 import org.jetbrains.annotations.NotNull;
@@ -9,10 +8,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class SwingInterface extends JFrame implements NameGeneratorInterface {
-  private final NameGenerator nameGenerator;
+  private NameGeneratorDetailsPanel detailsPanel;
 
   public SwingInterface() {
-    nameGenerator = new NameGenerator();
     setLayout(new BorderLayout(10, 10));
   }
 
@@ -33,14 +31,14 @@ public class SwingInterface extends JFrame implements NameGeneratorInterface {
   }
 
   private void addDetailsPanel() {
-    NameGeneratorDetailsPanel detailsPanel = createDetailsPanel();
+    detailsPanel = createDetailsPanel();
 
     add(detailsPanel, BorderLayout.CENTER);
   }
 
   @NotNull
   private NameGeneratorDetailsPanel createDetailsPanel() {
-    NameGeneratorDetailsPanel detailsPanel = new NameGeneratorDetailsPanel(nameGenerator);
+    NameGeneratorDetailsPanel detailsPanel = new NameGeneratorDetailsPanel();
     detailsPanel.setLayout(new GridLayout(0, 2, 1, 1));
 
     detailsPanel.addGenderBox();
@@ -74,7 +72,7 @@ public class SwingInterface extends JFrame implements NameGeneratorInterface {
     JLabel resultLabel = new JLabel();
     resultPanel.add(resultLabel, BorderLayout.CENTER);
 
-    generateButton.addActionListener(e -> resultLabel.setText(nameGenerator.generateRandomName()));
+    generateButton.addActionListener(e -> resultLabel.setText(detailsPanel.generateRandomName()));
 
     add(resultPanel, BorderLayout.PAGE_END);
   }

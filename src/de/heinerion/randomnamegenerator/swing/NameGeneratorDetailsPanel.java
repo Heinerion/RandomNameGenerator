@@ -4,15 +4,14 @@ import de.heinerion.randomnamegenerator.Gender;
 import de.heinerion.randomnamegenerator.NameGenerator;
 import de.heinerion.randomnamegenerator.Translator;
 import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
 public class NameGeneratorDetailsPanel extends JPanel {
   private final NameGenerator nameGenerator;
 
-  public NameGeneratorDetailsPanel(@NotNull NameGenerator nameGenerator) {
-    this.nameGenerator = nameGenerator;
+  public NameGeneratorDetailsPanel() {
+    nameGenerator = new NameGenerator();
   }
 
   public void addGenderBox() {
@@ -34,6 +33,10 @@ public class NameGeneratorDetailsPanel extends JPanel {
     JSpinner surnameSpinner = createSpinner(0, 0, 10, 1);
     surnameSpinner.addChangeListener(e -> nameGenerator.setNumberOfSurnames((int) surnameSpinner.getValue()));
     add(surnameSpinner);
+  }
+
+  public String generateRandomName() {
+    return nameGenerator.generateRandomName();
   }
 
   private void addTranslationLabel(String translationKey) {
