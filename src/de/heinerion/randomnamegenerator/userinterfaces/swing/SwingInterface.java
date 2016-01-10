@@ -1,7 +1,7 @@
-package de.heinerion.randomnamegenerator.swing;
+package de.heinerion.randomnamegenerator.userinterfaces.swing;
 
-import de.heinerion.randomnamegenerator.NameGeneratorInterface;
 import de.heinerion.randomnamegenerator.Translator;
+import de.heinerion.randomnamegenerator.userinterfaces.NameGeneratorInterface;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;

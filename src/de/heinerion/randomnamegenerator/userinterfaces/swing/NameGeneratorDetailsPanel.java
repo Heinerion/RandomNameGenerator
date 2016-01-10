@@ -1,9 +1,9 @@
-package de.heinerion.randomnamegenerator.swing;
+package de.heinerion.randomnamegenerator.userinterfaces.swing;
 
 import de.heinerion.randomnamegenerator.Gender;
-import de.heinerion.randomnamegenerator.NameGenerator;
-import de.heinerion.randomnamegenerator.PreFilledNameGenerator;
 import de.heinerion.randomnamegenerator.Translator;
+import de.heinerion.randomnamegenerator.generators.NameGenerator;
+import de.heinerion.randomnamegenerator.generators.PreFilledNameGenerator;
 import org.jetbrains.annotations.Contract;
 
 import javax.swing.*;

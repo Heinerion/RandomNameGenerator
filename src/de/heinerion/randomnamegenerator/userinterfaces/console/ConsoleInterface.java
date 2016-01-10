@@ -1,6 +1,11 @@
-package de.heinerion.randomnamegenerator.console;
+package de.heinerion.randomnamegenerator.userinterfaces.console;
 
-import de.heinerion.randomnamegenerator.*;
+import de.heinerion.randomnamegenerator.Gender;
+import de.heinerion.randomnamegenerator.HeinerionException;
+import de.heinerion.randomnamegenerator.Translator;
+import de.heinerion.randomnamegenerator.generators.NameGenerator;
+import de.heinerion.randomnamegenerator.generators.PreFilledNameGenerator;
+import de.heinerion.randomnamegenerator.userinterfaces.NameGeneratorInterface;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

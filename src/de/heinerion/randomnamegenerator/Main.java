@@ -1,7 +1,8 @@
 package de.heinerion.randomnamegenerator;
 
-import de.heinerion.randomnamegenerator.console.ConsoleInterface;
-import de.heinerion.randomnamegenerator.swing.SwingInterface;
+import de.heinerion.randomnamegenerator.userinterfaces.NameGeneratorInterface;
+import de.heinerion.randomnamegenerator.userinterfaces.console.ConsoleInterface;
+import de.heinerion.randomnamegenerator.userinterfaces.swing.SwingInterface;
 import org.jetbrains.annotations.NotNull;
 
 public class Main {

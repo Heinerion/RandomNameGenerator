@@ -1,4 +1,6 @@
-package de.heinerion.randomnamegenerator;
+package de.heinerion.randomnamegenerator.generators;
+
+import de.heinerion.randomnamegenerator.Gender;
 
 public class NameGenerator {
   private String[] maleForenames;

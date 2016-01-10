@@ -1,4 +1,4 @@
-package de.heinerion.randomnamegenerator.swing;
+package de.heinerion.randomnamegenerator.userinterfaces.swing;
 
 import org.junit.Before;
 

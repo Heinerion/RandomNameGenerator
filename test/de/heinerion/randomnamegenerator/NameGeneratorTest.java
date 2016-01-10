@@ -1,5 +1,6 @@
 package de.heinerion.randomnamegenerator;
 
+import de.heinerion.randomnamegenerator.generators.NameGenerator;
 import org.junit.Before;
 import org.junit.Test;
 
