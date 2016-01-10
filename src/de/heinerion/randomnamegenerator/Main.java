@@ -3,9 +3,10 @@ package de.heinerion.randomnamegenerator;
 import de.heinerion.randomnamegenerator.userinterfaces.NameGeneratorInterface;
 import de.heinerion.randomnamegenerator.userinterfaces.console.ConsoleInterface;
 import de.heinerion.randomnamegenerator.userinterfaces.swing.SwingInterface;
-import org.jetbrains.annotations.NotNull;
 
 public class Main {
+  private static NameGeneratorInterface userInterface;
+
   public static void main(String[] args) {
     String choice = "";
 
@@ -13,15 +14,11 @@ public class Main {
       choice = args[0];
     }
 
-    NameGeneratorInterface userInterface = getNameGeneratorInterface(choice);
-
-    userInterface.showInterface();
+    startup(choice);
+    run();
   }
 
-  @NotNull
-  private static NameGeneratorInterface getNameGeneratorInterface(String choice) {
-    NameGeneratorInterface userInterface;
-
+  private static void startup(String choice) {
     switch (choice) {
       case "swing":
         userInterface = new SwingInterface();
@@ -32,7 +29,9 @@ public class Main {
       default:
         userInterface = new ConsoleInterface();
     }
+  }
 
-    return userInterface;
+  private static void run() {
+    userInterface.showInterface();
   }
 }
