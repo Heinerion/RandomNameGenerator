@@ -1,18 +1,30 @@
 package de.heinerion.randomnamegenerator;
 
 public class NameGenerator {
-  private final String[] maleForenames;
-  private final String[] femaleForenames;
-  private final String[] surnames;
+  private String[] maleForenames;
+  private String[] femaleForenames;
+  private String[] surnames;
 
   private Gender gender = Gender.MALE;
   private int numberOfForenames = 0;
   private int numberOfSurnames = 0;
 
   public NameGenerator() {
-    this.femaleForenames = NameService.getFemaleForenames();
-    this.maleForenames = NameService.getMaleForenames();
-    this.surnames = NameService.getSurnames();
+    setFemaleForenames(NameService.getFemaleForenames());
+    setMaleForenames(NameService.getMaleForenames());
+    setSurnames(NameService.getSurnames());
+  }
+
+  protected void setMaleForenames(String[] maleForenames) {
+    this.maleForenames = maleForenames;
+  }
+
+  protected void setFemaleForenames(String[] femaleForenames) {
+    this.femaleForenames = femaleForenames;
+  }
+
+  protected void setSurnames(String[] surnames) {
+    this.surnames = surnames;
   }
 
   public void setGender(Gender gender) {
