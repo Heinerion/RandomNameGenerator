@@ -2,7 +2,6 @@ package de.heinerion.randomnamegenerator.userinterfaces.swing;
 
 import de.heinerion.randomnamegenerator.Translator;
 import de.heinerion.randomnamegenerator.userinterfaces.NameGeneratorInterface;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,42 +11,64 @@ public class SwingInterface extends JFrame implements NameGeneratorInterface {
 
   private NameGeneratorDetailsPanel detailsPanel;
 
+  private JPanel headerPanel;
+  private JPanel resultPanel;
+  private JButton generateButton;
+  private JLabel resultLabel;
+
   public SwingInterface() {
     setLayout(new BorderLayout(10, 10));
   }
 
-  private void init() {
-    addHeader();
-    addDetailsPanel();
-    addWhitespaceLeftAndRight();
-    addResultField();
+  public void showInterface() {
+    initComponents();
+    setVisible(true);
+  }
+
+  private void initComponents() {
+    createWidgets();
+    addWidgets();
+    setupInteractions();
 
     pack();
   }
 
-  private void addHeader() {
-    JPanel headerPanel = new JPanel();
+  private void createWidgets() {
+    createHeaderPanel();
+    createDetailsPanel();
+    createResultPanel();
+  }
+
+  private void createHeaderPanel() {
+    headerPanel = new JPanel();
     headerPanel.add(new JLabel(Translator.translate("title")));
     headerPanel.add(new JLabel(Translator.translate("description")));
-    add(headerPanel, BorderLayout.PAGE_START);
   }
 
-  private void addDetailsPanel() {
-    detailsPanel = createDetailsPanel();
-
-    add(detailsPanel, BorderLayout.CENTER);
-  }
-
-  @NotNull
-  private NameGeneratorDetailsPanel createDetailsPanel() {
-    NameGeneratorDetailsPanel detailsPanel = new NameGeneratorDetailsPanel();
+  private void createDetailsPanel() {
+    detailsPanel = new NameGeneratorDetailsPanel();
     detailsPanel.setLayout(new GridLayout(0, 2, 1, 1));
 
     detailsPanel.addGenderBox();
     detailsPanel.addForenameSpinner();
     detailsPanel.addSurnameSpinner();
+  }
 
-    return detailsPanel;
+  private void createResultPanel() {
+    resultPanel = new JPanel(new BorderLayout(10, 10));
+
+    generateButton = new JButton(Translator.translate("generateName"));
+    resultLabel = new JLabel();
+
+    resultPanel.add(generateButton, BorderLayout.LINE_START);
+    resultPanel.add(resultLabel, BorderLayout.CENTER);
+  }
+
+  private void addWidgets() {
+    add(headerPanel, BorderLayout.PAGE_START);
+    add(detailsPanel, BorderLayout.CENTER);
+    addWhitespaceLeftAndRight();
+    add(resultPanel, BorderLayout.PAGE_END);
   }
 
   private void addWhitespaceLeftAndRight() {
@@ -65,22 +86,7 @@ public class SwingInterface extends JFrame implements NameGeneratorInterface {
     return spacePanel;
   }
 
-  private void addResultField() {
-    JPanel resultPanel = new JPanel(new BorderLayout(10, 10));
-
-    JButton generateButton = new JButton(Translator.translate("generateName"));
-    resultPanel.add(generateButton, BorderLayout.LINE_START);
-
-    JLabel resultLabel = new JLabel();
-    resultPanel.add(resultLabel, BorderLayout.CENTER);
-
+  private void setupInteractions() {
     generateButton.addActionListener(e -> resultLabel.setText(detailsPanel.generateRandomName()));
-
-    add(resultPanel, BorderLayout.PAGE_END);
-  }
-
-  public void showInterface() {
-    init();
-    setVisible(true);
   }
 }
