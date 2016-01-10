@@ -33,7 +33,7 @@ public class ConsoleInterface implements NameGeneratorInterface {
   }
 
   private void initializeNameGenerator() {
-    nameGenerator = new NameGenerator();
+    nameGenerator = new PreFilledNameGenerator();
   }
 
   private void askForGender() throws Exception {

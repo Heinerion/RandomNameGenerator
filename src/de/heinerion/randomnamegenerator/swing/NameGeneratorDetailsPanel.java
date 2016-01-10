@@ -2,6 +2,7 @@ package de.heinerion.randomnamegenerator.swing;
 
 import de.heinerion.randomnamegenerator.Gender;
 import de.heinerion.randomnamegenerator.NameGenerator;
+import de.heinerion.randomnamegenerator.PreFilledNameGenerator;
 import de.heinerion.randomnamegenerator.Translator;
 import org.jetbrains.annotations.Contract;
 
@@ -11,7 +12,7 @@ public class NameGeneratorDetailsPanel extends JPanel {
   private final NameGenerator nameGenerator;
 
   public NameGeneratorDetailsPanel() {
-    nameGenerator = new NameGenerator();
+    nameGenerator = new PreFilledNameGenerator();
   }
 
   public void addGenderBox() {
