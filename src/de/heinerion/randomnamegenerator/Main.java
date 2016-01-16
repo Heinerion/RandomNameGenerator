@@ -2,6 +2,7 @@ package de.heinerion.randomnamegenerator;
 
 import de.heinerion.randomnamegenerator.userinterfaces.NameGeneratorInterface;
 import de.heinerion.randomnamegenerator.userinterfaces.console.ConsoleInterface;
+import de.heinerion.randomnamegenerator.userinterfaces.javafx.JavaFxInterface;
 import de.heinerion.randomnamegenerator.userinterfaces.swing.SwingInterface;
 
 public class Main {
@@ -24,7 +25,8 @@ public class Main {
         userInterface = new SwingInterface();
         break;
       case "fx":
-        throw new HeinerionException("FX Interface not implemented");
+        userInterface = new JavaFxInterface();
+        break;
       case "console":
       default:
         userInterface = new ConsoleInterface();
