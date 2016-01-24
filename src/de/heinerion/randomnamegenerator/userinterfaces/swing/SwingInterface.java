@@ -49,9 +49,9 @@ public class SwingInterface extends JFrame implements NameGeneratorInterface {
     detailsPanel = new NameGeneratorDetailsPanel();
     detailsPanel.setLayout(new GridLayout(0, 2, 1, 1));
 
-    detailsPanel.addGenderBox();
-    detailsPanel.addForenameSpinner();
-    detailsPanel.addSurnameSpinner();
+    detailsPanel.addGenderBoxAndLabel();
+    detailsPanel.addForenameSpinnerAndLabel();
+    detailsPanel.addSurnameSpinnerAndLabel();
   }
 
   private void createResultPanel() {
