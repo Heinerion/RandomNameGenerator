@@ -30,6 +30,7 @@ public class SwingInterface extends JFrame implements NameGeneratorInterface {
     addWidgets();
     setupInteractions();
 
+    setTitle(Translator.translate("title"));
     pack();
   }
 
