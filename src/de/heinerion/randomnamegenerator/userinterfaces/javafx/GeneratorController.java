@@ -1,13 +1,13 @@
 package de.heinerion.randomnamegenerator.userinterfaces.javafx;
 
 import de.heinerion.randomnamegenerator.Gender;
+import de.heinerion.randomnamegenerator.Translator;
 import de.heinerion.randomnamegenerator.generators.NameGenerator;
 import de.heinerion.randomnamegenerator.generators.PreFilledNameGenerator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -17,13 +17,28 @@ public class GeneratorController implements Initializable {
   private final NameGenerator nameGenerator = new PreFilledNameGenerator();
 
   @FXML
+  private Text headline;
+
+  @FXML
   private Spinner<Integer> forenameSpinner;
 
   @FXML
   private Spinner<Integer> surnameSpinner;
 
   @FXML
-  private Text result;
+  private TextField result;
+
+  @FXML
+  private Label genderLabel;
+
+  @FXML
+  private Label forenameLabel;
+
+  @FXML
+  private Label surnameLabel;
+
+  @FXML
+  private Button generateButton;
 
   @FXML
   private ComboBox<Gender> genderBox = new ComboBox<>();
@@ -42,8 +57,20 @@ public class GeneratorController implements Initializable {
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-    // TODO translate keys
+    headline.setText(translate("title"));
+//    secondHeadline.setText(translate("description"));
+
+    genderLabel.setText(translate("gender"));
+    forenameLabel.setText(translate("numberOfForenames"));
+    surnameLabel.setText(translate("numberOfSurnames"));
+
+    generateButton.setText(translate("generateName"));
 
     genderBox.getItems().addAll(Gender.values());
+  }
+
+  @FXML
+  private String translate(String key) {
+    return Translator.translate(key);
   }
 }

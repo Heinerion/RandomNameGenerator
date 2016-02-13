@@ -13,7 +13,7 @@ public class NameGeneratorFX extends Application {
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("nameGenerator.fxml"));
     primaryStage.setTitle(translate("title"));
-    primaryStage.setScene(new Scene(root, 300, 275));
+    primaryStage.setScene(new Scene(root, 500, 240));
     primaryStage.show();
   }
 
