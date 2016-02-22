@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class mainTest {
+public class MainTest {
   // TODO consider making an enum for these choices
   private static final String FX = "fx";
   private static final String SWING = "swing";
