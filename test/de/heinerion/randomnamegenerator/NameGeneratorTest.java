@@ -66,15 +66,15 @@ public class NameGeneratorTest {
 
   @Test
   public void testSetNumberOfForenamesToOne() throws Exception {
-    setNumberOfForenames(1);
+    assertSetNumberOfForenames(1);
   }
 
   @Test
   public void testSetNumberOfForenamesToThree() throws Exception {
-    setNumberOfForenames(3);
+    assertSetNumberOfForenames(3);
   }
 
-  private void setNumberOfForenames(int number) {
+  private void assertSetNumberOfForenames(int number) {
     nameGenerator.setNumberOfForenames(number);
 
     String result = nameGenerator.generateRandomName();
