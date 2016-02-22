@@ -11,9 +11,6 @@ public class NameGenerator {
   private int numberOfForenames = 0;
   private int numberOfSurnames = 0;
 
-  public NameGenerator() {
-  }
-
   public void setMaleForenames(String[] maleForenames) {
     this.maleForenames = maleForenames;
   }
