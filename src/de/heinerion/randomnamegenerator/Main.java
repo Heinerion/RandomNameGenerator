@@ -30,12 +30,15 @@ public class Main {
       case "swing":
         userInterface = new SwingInterface();
         break;
+
       case "fx":
         userInterface = new JavaFxInterface();
         break;
+
       case "console":
       default:
         userInterface = new ConsoleInterface();
+        break;
     }
   }
 
