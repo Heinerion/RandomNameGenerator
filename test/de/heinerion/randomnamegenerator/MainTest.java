@@ -25,7 +25,7 @@ public class MainTest {
   private String pseudoInterfaceResult = FAIL;
 
   @Before
-  public void setup() {
+  public void setUp() {
     pseudoInterfaceResult = FAIL;
   }
 
