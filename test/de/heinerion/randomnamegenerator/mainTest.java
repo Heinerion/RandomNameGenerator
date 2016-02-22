@@ -4,6 +4,7 @@ import de.heinerion.randomnamegenerator.userinterfaces.console.ConsoleInterface;
 import de.heinerion.randomnamegenerator.userinterfaces.javafx.JavaFxInterface;
 import de.heinerion.randomnamegenerator.userinterfaces.swing.SwingInterface;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -22,6 +23,11 @@ public class mainTest {
   private static final String SUCCESS = "success";
 
   private String pseudoInterfaceResult = FAIL;
+
+  @Before
+  public void setup() {
+    pseudoInterfaceResult = FAIL;
+  }
 
   @Test
   public void testUserInterfaceChoice() throws Exception {
@@ -64,8 +70,6 @@ public class mainTest {
 
   @Test
   public void testRun() throws Exception {
-    pseudoInterfaceResult = "failure";
-
     Main.userInterface = () -> pseudoInterfaceResult = SUCCESS;
 
     Main.run();
