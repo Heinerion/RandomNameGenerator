@@ -98,15 +98,15 @@ public class NameGeneratorTest {
 
   @Test
   public void testSetNumberOfSurnamesToOne() throws Exception {
-    setNumberOfSurnames(1);
+    assertSetNumberOfSurnames(1);
   }
 
   @Test
   public void testSetNumberOfSurnamesToThree() throws Exception {
-    setNumberOfSurnames(3);
+    assertSetNumberOfSurnames(3);
   }
 
-  private void setNumberOfSurnames(int number) {
+  private void assertSetNumberOfSurnames(int number) {
     nameGenerator.setNumberOfSurnames(number);
 
     String result = nameGenerator.generateRandomName();
@@ -132,25 +132,25 @@ public class NameGeneratorTest {
 
   @Test
   public void testSetNumbersOfForenamesToZeroAndSurnamesTo1() throws Exception {
-    setNumberOfNames(0, 1);
+    assertSetNumberOfNames(0, 1);
   }
 
   @Test
   public void testSetNumbersOfForenamesTo1AndSurnamesToZero() throws Exception {
-    setNumberOfNames(1, 0);
+    assertSetNumberOfNames(1, 0);
   }
 
   @Test
   public void testSetNumbersOfForenamesTo1AndSurnamesTo1() throws Exception {
-    setNumberOfNames(1, 1);
+    assertSetNumberOfNames(1, 1);
   }
 
   @Test
   public void testSetNumbersOfForenamesTo2AndSurnamesTo3() throws Exception {
-    setNumberOfNames(2, 3);
+    assertSetNumberOfNames(2, 3);
   }
 
-  private void setNumberOfNames(int forenames, int surnames) {
+  private void assertSetNumberOfNames(int forenames, int surnames) {
     nameGenerator.setNumberOfForenames(forenames);
     nameGenerator.setNumberOfSurnames(surnames);
 
