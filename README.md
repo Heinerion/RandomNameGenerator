@@ -1,5 +1,10 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/af8fe2f119454c799779aaac6f148a9f)](https://www.codacy.com/app/phe0nix/RandomNameGenerator)
+
 # RandomNameGenerator
 A little exercise in Java, following the concepts of "Clean Code" (Robert C. Martin)
+
+I am also testing a few other clean code and style related things on the way.
+Such as GitHub integrations and IDE-Plugins
 
 ## Purpose
 The purpose of this program is to generate a name, based on the gender and the number of fore- and surnames.
