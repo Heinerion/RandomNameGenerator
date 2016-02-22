@@ -15,21 +15,21 @@ public class NameGeneratorDetailsPanel extends JPanel {
     nameGenerator = new PreFilledNameGenerator();
   }
 
-  public void addGenderBox() {
+  public void addGenderBoxAndLabel() {
     addTranslationLabel("gender");
     JComboBox<Gender> genderBox = new JComboBox<>(Gender.values());
     genderBox.addActionListener(e -> nameGenerator.setGender((Gender) genderBox.getSelectedItem()));
     add(genderBox);
   }
 
-  public void addForenameSpinner() {
+  public void addForenameSpinnerAndLabel() {
     addTranslationLabel("numberOfForenames");
     JSpinner forenameSpinner = createDefaultSpinner();
     forenameSpinner.addChangeListener(e -> nameGenerator.setNumberOfForenames((int) forenameSpinner.getValue()));
     add(forenameSpinner);
   }
 
-  public void addSurnameSpinner() {
+  public void addSurnameSpinnerAndLabel() {
     addTranslationLabel("numberOfSurnames");
     JSpinner surnameSpinner = createDefaultSpinner();
     surnameSpinner.addChangeListener(e -> nameGenerator.setNumberOfSurnames((int) surnameSpinner.getValue()));
