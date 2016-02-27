@@ -18,7 +18,7 @@ public class SwingInterfaceTest {
   }
 
   @Test
-  public void testInit() throws Exception {
+  public void testInit() {
     interfaceContainsNothingButRootPane();
 
     swingInterface.showInterface();

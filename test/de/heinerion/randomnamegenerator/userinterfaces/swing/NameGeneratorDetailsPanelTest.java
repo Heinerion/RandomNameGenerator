@@ -16,7 +16,7 @@ public class NameGeneratorDetailsPanelTest {
   }
 
   @org.junit.Test
-  public void testAddGenderBox() throws Exception {
+  public void testAddGenderBox() {
     int countBefore = panel.getComponentCount();
     panel.addGenderBoxAndLabel();
     int countAfter = panel.getComponentCount();
@@ -38,7 +38,7 @@ public class NameGeneratorDetailsPanelTest {
   }
 
   @org.junit.Test
-  public void testAddForenameSpinner() throws Exception {
+  public void testAddForenameSpinner() {
     int countBefore = panel.getComponentCount();
     panel.addForenameSpinnerAndLabel();
     int countAfter = panel.getComponentCount();
@@ -50,7 +50,7 @@ public class NameGeneratorDetailsPanelTest {
   }
 
   @org.junit.Test
-  public void testAddSurnameSpinner() throws Exception {
+  public void testAddSurnameSpinner() {
     int countBefore = panel.getComponentCount();
     panel.addSurnameSpinnerAndLabel();
     int countAfter = panel.getComponentCount();
@@ -62,7 +62,7 @@ public class NameGeneratorDetailsPanelTest {
   }
 
   @org.junit.Test
-  public void testGenerateRandomNameWithoutAdjustments() throws Exception {
+  public void testGenerateRandomNameWithoutAdjustments() {
     String name = panel.generateRandomName();
 
     assertEquals("", name);

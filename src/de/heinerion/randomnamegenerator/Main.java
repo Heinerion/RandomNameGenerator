@@ -5,8 +5,8 @@ import de.heinerion.randomnamegenerator.userinterfaces.console.ConsoleInterface;
 import de.heinerion.randomnamegenerator.userinterfaces.javafx.JavaFxInterface;
 import de.heinerion.randomnamegenerator.userinterfaces.swing.SwingInterface;
 
-public class Main {
-  protected static NameGeneratorInterface userInterface;
+class Main {
+  static NameGeneratorInterface userInterface;
 
   public static void main(String[] args) {
     String choice = parseChoice(args);
@@ -15,7 +15,7 @@ public class Main {
     run();
   }
 
-  protected static String parseChoice(String[] args) {
+  static String parseChoice(String[] args) {
     String choice = "";
 
     if (args.length > 0 && args[0] != null) {
@@ -25,7 +25,7 @@ public class Main {
     return choice;
   }
 
-  protected static void startup(String choice) {
+  static void startup(String choice) {
     switch (choice) {
       case "swing":
         userInterface = new SwingInterface();
@@ -42,7 +42,7 @@ public class Main {
     }
   }
 
-  protected static void run() {
+  static void run() {
     userInterface.showInterface();
   }
 }

@@ -16,7 +16,7 @@ public class NameGeneratorTest {
   private NameGenerator nameGenerator;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     nameGenerator = new NameGenerator();
     nameGenerator.setMaleForenames(validMaleForenames);
     nameGenerator.setFemaleForenames(validFemaleForenames);
@@ -28,7 +28,7 @@ public class NameGeneratorTest {
   }
 
   @Test
-  public void testSetGenderMale() throws Exception {
+  public void testSetGenderMale() {
     nameGenerator.setNumberOfForenames(1);
 
     nameGenerator.setGender(Gender.MALE);
@@ -38,7 +38,7 @@ public class NameGeneratorTest {
   }
 
   @Test
-  public void testSetGenderFemale() throws Exception {
+  public void testSetGenderFemale() {
     nameGenerator.setNumberOfForenames(1);
 
     nameGenerator.setGender(Gender.FEMALE);
@@ -65,12 +65,12 @@ public class NameGeneratorTest {
   }
 
   @Test
-  public void testSetNumberOfForenamesToOne() throws Exception {
+  public void testSetNumberOfForenamesToOne() {
     assertSetNumberOfForenames(1);
   }
 
   @Test
-  public void testSetNumberOfForenamesToThree() throws Exception {
+  public void testSetNumberOfForenamesToThree() {
     assertSetNumberOfForenames(3);
   }
 
@@ -97,12 +97,12 @@ public class NameGeneratorTest {
   }
 
   @Test
-  public void testSetNumberOfSurnamesToOne() throws Exception {
+  public void testSetNumberOfSurnamesToOne() {
     assertSetNumberOfSurnames(1);
   }
 
   @Test
-  public void testSetNumberOfSurnamesToThree() throws Exception {
+  public void testSetNumberOfSurnamesToThree() {
     assertSetNumberOfSurnames(3);
   }
 
@@ -131,22 +131,22 @@ public class NameGeneratorTest {
   }
 
   @Test
-  public void testSetNumbersOfForenamesToZeroAndSurnamesTo1() throws Exception {
+  public void testSetNumbersOfForenamesToZeroAndSurnamesTo1() {
     assertSetNumberOfNames(0, 1);
   }
 
   @Test
-  public void testSetNumbersOfForenamesTo1AndSurnamesToZero() throws Exception {
+  public void testSetNumbersOfForenamesTo1AndSurnamesToZero() {
     assertSetNumberOfNames(1, 0);
   }
 
   @Test
-  public void testSetNumbersOfForenamesTo1AndSurnamesTo1() throws Exception {
+  public void testSetNumbersOfForenamesTo1AndSurnamesTo1() {
     assertSetNumberOfNames(1, 1);
   }
 
   @Test
-  public void testSetNumbersOfForenamesTo2AndSurnamesTo3() throws Exception {
+  public void testSetNumbersOfForenamesTo2AndSurnamesTo3() {
     assertSetNumberOfNames(2, 3);
   }
 

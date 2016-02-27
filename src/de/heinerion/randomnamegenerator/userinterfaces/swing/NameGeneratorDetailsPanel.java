@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Contract;
 
 import javax.swing.*;
 
-public class NameGeneratorDetailsPanel extends JPanel {
+class NameGeneratorDetailsPanel extends JPanel {
   private final NameGenerator nameGenerator;
 
   public NameGeneratorDetailsPanel() {

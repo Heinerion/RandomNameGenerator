@@ -41,8 +41,9 @@ public class GeneratorController implements Initializable {
   private Button generateButton;
 
   @FXML
-  private ComboBox<Gender> genderBox = new ComboBox<>();
+  private final ComboBox<Gender> genderBox = new ComboBox<>();
 
+  @SuppressWarnings({"unused", "UnusedParameters"})
   @FXML
   private void handleSubmitButtonAction(ActionEvent event) {
     nameGenerator.setNumberOfForenames(forenameSpinner.getValue());

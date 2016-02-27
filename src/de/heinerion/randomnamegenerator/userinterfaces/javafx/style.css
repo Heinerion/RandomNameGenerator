@@ -2,10 +2,12 @@ root {
     display: block;
 }
 
+/*noinspection ALL*/
 .root {
     -fx-background-image: url("background.jpg");
 }
 
+/*noinspection ALL*/
 .label {
     -fx-font-size: 12px;
     -fx-font-weight: bold;
@@ -13,6 +15,7 @@ root {
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 }
 
+/*noinspection ALL*/
 #headline {
     -fx-font-size: 32px;
     -fx-font-family: "Arial Black";
@@ -26,6 +29,7 @@ root {
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 }
 
+/*noinspection ALL*/
 .button {
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
@@ -34,6 +38,7 @@ root {
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 
+/*noinspection ALL*/
 .button:hover {
     -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }

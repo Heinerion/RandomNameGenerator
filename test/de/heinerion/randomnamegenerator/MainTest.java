@@ -30,7 +30,7 @@ public class MainTest {
   }
 
   @Test
-  public void testUserInterfaceChoice() throws Exception {
+  public void testUserInterfaceChoice() {
     List<String> strings = new ArrayList<>();
 
     String result = Main.parseChoice(listToString(strings));
@@ -50,7 +50,7 @@ public class MainTest {
   }
 
   @Test
-  public void testStartup() throws Exception {
+  public void testStartup() {
     Main.startup(FX);
     assertUserInterfaceIsOfType(JavaFxInterface.class);
 
@@ -69,7 +69,7 @@ public class MainTest {
   }
 
   @Test
-  public void testRun() throws Exception {
+  public void testRun() {
     Main.userInterface = () -> pseudoInterfaceResult = SUCCESS;
 
     Main.run();
