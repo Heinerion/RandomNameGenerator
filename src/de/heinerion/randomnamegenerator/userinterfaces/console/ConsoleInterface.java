@@ -8,6 +8,7 @@ import de.heinerion.randomnamegenerator.generators.PreFilledNameGenerator;
 import de.heinerion.randomnamegenerator.userinterfaces.NameGeneratorInterface;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
@@ -23,37 +24,29 @@ public class ConsoleInterface implements NameGeneratorInterface {
     showGeneratedName();
   }
 
-  private void interactWithUser() {
-    try {
-      askForDetails();
-    } catch (Exception e) {
-      throw new HeinerionException(e);
-    }
+  private void initializeNameGenerator() {
+    nameGenerator = new PreFilledNameGenerator();
   }
 
-  private void askForDetails() throws Exception {
+  private void interactWithUser() {
     askForGender();
     askForTheNumberOfForenames();
     askForTheNumberOfSurnames();
   }
 
-  private void initializeNameGenerator() {
-    nameGenerator = new PreFilledNameGenerator();
-  }
-
-  private void askForGender() throws Exception {
+  private void askForGender() {
     showMessageByTranslationKey("chooseGender");
     Gender gender = Gender.parseGender(readInput());
     nameGenerator.setGender(gender);
   }
 
-  private void askForTheNumberOfForenames() throws Exception {
+  private void askForTheNumberOfForenames() {
     showMessageByTranslationKey("chooseNumberOfForenames");
     int numberOfForenames = Integer.parseInt(readInput());
     nameGenerator.setNumberOfForenames(numberOfForenames);
   }
 
-  private void askForTheNumberOfSurnames() throws Exception {
+  private void askForTheNumberOfSurnames() {
     showMessageByTranslationKey("chooseNumberOfSurnames");
     int numberOfSurnames = Integer.parseInt(readInput());
     nameGenerator.setNumberOfSurnames(numberOfSurnames);
@@ -72,7 +65,15 @@ public class ConsoleInterface implements NameGeneratorInterface {
     System.out.println(message);
   }
 
-  private static String readInput() throws Exception {
+  private static String readInput() {
+    try {
+      return readFromInputStream();
+    } catch (Exception e) {
+      throw new HeinerionException(e);
+    }
+  }
+
+  private static String readFromInputStream() throws IOException {
     Reader inputReader = new InputStreamReader(System.in);
     BufferedReader bufferedInputReader = new BufferedReader(inputReader);
 
